@@ -1,0 +1,74 @@
+Docker:- Contenarization Platform 
+Package apps with all dependencies into isolated environments called Containers
+Docker runs on any System without worrying about dependencies, OS Versions, or Conflicts
+Faster deployment as containers start instantly compared to traditional machines(Virtual Machines)
+Make sacling spps easy by running Multiple containers as Microservices
+
+
+Without Docker:- It works in our machine , But not in urs 
+              :- Apps break when moved from development to production
+            
+1)Docker Image:- Blueprint/template , Contains everything needed to run an app 
+              :- Images are Immutable
+              :- Stored in DockerHub or private registries for reuse
+              :- Docker Images cannot be Updated
+              :- Its the actual clone of our project
+
+2)Docker Containers:- It is a running instance of a Docker Image (Object of Docker Image)
+                   :- Isolated, Lightweight, Portable environment where apps run
+                   :- Can be started, stopped, deleted
+                   :- Docker install requirements like node and all even if it's not installed automatically, if its listed in requirements.txt
+
+3)Vizualization:-
+===========================
+             build                      Run
+Dockerfile-------------->Docker Images-------------->Docker Container
+
+4)Base/Parent Image:- Starting point for building a Docker Image
+                   :- can be official Images
+                   :- Dockerfile inherits from a base image using FROM keyword
+
+5)Docker Hub:-Official cloud based repository for container images 
+            :-Provides pre-built images 
+            :-Developers can push and pull images 
+            eg:- node official image (type node/ubuntu/anything in docker hub search bar)
+
+6)Docker Desktop:- GUI based tool to run Docker easily
+                :- Comes with Docker Engine,CLI,and Kubernates support
+                :- Helps in building,running,managing containers
+                :- It has more features than docker hub
+
+Commonds:-
+===================
+1)docker pull <node/ubuntu/any_software> :- Pull the existing sotware docker image , Downloading the image
+2)docker run -it <node> /bin/bash :- Run the Container  , exit:- to come out
+3)Folder => npm init :- create package.json of our node  ,Only then node comes to our file
+4)npm i express => Express.js package.json installed
+5)To create docker Image:- 1)dockerfile  ,VS Code Extension:-dockerfile
+                           2)FROM <BaseImage>
+                           eg:- FROM node:latest  //Version
+                           3)COPY <source> <dest>  //making clone of our application
+                           eg:- COPY . ./app  // .=>Copy from Current Directory , ./app=>paste in the directory(app) made in the image 
+                           4)RUN npm install <softwares></softwares>   //Install all softwares used in our project/Packages
+                           eg:- RUN npm install express --save
+                           5)EXPOSE <port no>
+                           eg:- EXPOSE 4000
+                           6)CMD ["node","index.js"]
+                           eg:- CMD ["node","index.js"]
+                           
+6)Building the Image:- docker build -t <container_name> .
+                  eg:- docker build -t my-app .  // . =>Craete Image in the same cuurent directory
+
+7)To see Docker images:- docker images
+8)Run docker image inside a container:- 
+                    1)'my-app' in docker desktop =>run => optional settings=>Container_name & Host port:- <Your Port no(eg:- 4000)>
+                    2)run 
+                    3)stop
+                    4)Now there will be a container in ur docker desktop in Containers section
+
+9)Docker ignore:- .dockerignore =>docker untrack the files or folders u entered in this file
+eg:- node modules, which is very heavy to carry for containers 
+even we ignore node modules noting will happen, cause there is RUN npm install in dockerfile it will automatically install all the dependencies it requires 
+*.css => ignore infinity files that has .css extension
+
+10)
