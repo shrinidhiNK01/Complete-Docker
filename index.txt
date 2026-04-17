@@ -71,4 +71,4 @@ eg:- node modules, which is very heavy to carry for containers
 even we ignore node modules noting will happen, cause there is RUN npm install in dockerfile it will automatically install all the dependencies it requires 
 *.css => ignore infinity files that has .css extension
 
-10)
+10)Updating the new Version of our project to 
