@@ -2,7 +2,7 @@ Docker:- Contenarization Platform
 Package apps with all dependencies into isolated environments called Containers
 Docker runs on any System without worrying about dependencies, OS Versions, or Conflicts
 Faster deployment as containers start instantly compared to traditional machines(Virtual Machines)
-Make sacling spps easy by running Multiple containers as Microservices
+Make scaling apps easy by running Multiple containers as Microservices
 
 
 Without Docker:- It works in our machine , But not in urs 
@@ -57,7 +57,7 @@ Commonds:-
                            eg:- CMD ["node","index.js"]
                            
 6)Building the Image:- docker build -t <container_name> .
-                  eg:- docker build -t my-app .  // . =>Craete Image in the same cuurent directory
+                  eg:- docker build -t my-app .  // . =>Create Image in the same current directory
 
 7)To see Docker images:- docker images
 8)Run docker image inside a container:- 
@@ -71,4 +71,12 @@ eg:- node modules, which is very heavy to carry for containers
 even we ignore node modules noting will happen, cause there is RUN npm install in dockerfile it will automatically install all the dependencies it requires 
 *.css => ignore infinity files that has .css extension
 
-10)Updating the new Version of our project to 
+10)remove containers/images/cache in 1 commond :- docker system prune -a 
+11)Building new Version of same file = if we change anything in our file , it will be our new Version :-
+docker build -t myapp:v2 .
+docker build -t myapp:v1 .
+docker build -t myapp:v3 .
+docker build -t myapp:v4 .
+
+u can track all the versions of ur file in containers
+                                        
