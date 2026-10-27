@@ -3,7 +3,16 @@ Package apps with all dependencies into isolated environments called Containers
 Docker runs on any System without worrying about dependencies, OS Versions, or Conflicts
 Faster deployment as containers start instantly compared to traditional machines(Virtual Machines)
 Make scaling apps easy by running Multiple containers as Microservices
+developing, packaging, shipping, running apps
+Provides the ability to run an app in an isolated env called container
+makes deployment and development efficient 
 
+What is a Container?
+
+. A way to package an application with all the necessary
+dependencies and configuration.
+. It can be easily shared
+· Makes deployment and development efficient.
 
 Without Docker:- It works in our machine , But not in urs 
               :- Apps break when moved from development to production
@@ -40,6 +49,8 @@ Dockerfile-------------->Docker Images-------------->Docker Container
 
 Commonds:-
 ===================
+docker -v
+docker ps 
 1)docker pull <node/ubuntu/any_software> :- Pull the existing sotware docker image , Downloading the image
 2)docker run -it <node> /bin/bash :- Run the Container  , exit:- to come out
 3)Folder => npm init :- create package.json of our node  ,Only then node comes to our file

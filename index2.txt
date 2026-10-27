@@ -1,0 +1,22 @@
+Microservices Architecture
+============================
+A variant of the service-oriented architecture (SOA) structural style
+- arranges an application as a collection of loosely coupled services.
+
+In a microservices architecture, services are fine-grained and the
+protocols are lightweight.
+
+Built as a single unit
+Deployed as a single unit
+duplicated on each server
+
+Microservices
+=====================
+. Segregates functionality into smaller separate services each with
+a single responsibility
+. Scales out by deploying each service independently
+. Loosely coupled
+. Enable autonomous development by different teams, languages
+and platforms
+. Can be written by smaller teams
+. Each microservice can own it's own data/database
